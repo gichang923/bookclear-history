@@ -1,0 +1,115 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Arial, sans-serif;
+}
+
+#background {
+  position: fixed;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.03);
+  filter: brightness(0.55) saturate(1.05);
+}
+
+#background::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: radial-gradient(1200px 800px at 20% 20%, rgba(255,255,255,0.08), transparent 60%),
+              linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.55));
+}
+
+.content{
+  position: relative;
+  z-index: 1;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.header{
+  max-width: 760px;
+}
+
+.badge{
+  display: inline-block;
+  padding: 6px 10px;
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  background: rgba(0,0,0,0.18);
+  backdrop-filter: blur(6px);
+}
+
+h1{
+  margin: 14px 0 10px;
+  font-size: clamp(28px, 3.4vw, 44px);
+  line-height: 1.1;
+}
+
+p{
+  margin: 0;
+  opacity: 0.92;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.choices{
+  margin-top: 22px;
+  max-width: 760px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+button.choice{
+  width: 100%;
+  text-align: left;
+  padding: 14px 16px;
+  font-size: 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(0,0,0,0.22);
+  color: #fff;
+  cursor: pointer;
+  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+  backdrop-filter: blur(7px);
+}
+
+button.choice:hover{
+  transform: translateY(-1px);
+  background: rgba(0,0,0,0.30);
+  border-color: rgba(255,255,255,0.32);
+}
+
+button.choice:active{
+  transform: translateY(0px);
+}
+
+.footer{
+  margin-top: auto;
+  padding-top: 18px;
+  opacity: 0.85;
+  font-size: 13px;
+}
+
+.hint{
+  display: inline-block;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.18);
+  border: 1px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(6px);
+}
+
+@media (min-width: 760px){
+  .choices{
+    grid-template-columns: 1fr 1fr;
+  }
+}
